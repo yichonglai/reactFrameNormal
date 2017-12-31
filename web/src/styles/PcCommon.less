@@ -1,0 +1,191 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+    font-family: Helvetica, Tahoma, Arial, "Hiragino Sans GB", "Microsoft YaHei", SimSun, Heiti, sans-serif;
+}
+
+body,
+html {
+    height: 100%;
+    font-size: 20px;
+}
+// Root
+#app{
+    width:100%;
+    height:100%;
+}
+// Global
+.newly {//新建
+  text-align: right;
+  margin-bottom: 10px
+}
+/* font-size */
+.font-size7{
+    font-size:14px;
+}
+.font-size9{
+    font-size:18px;
+}
+/* title */
+.ivu-tooltip-inner {
+  white-space: normal;
+}
+/* table area */
+.textArea{
+    max-height: 80px;
+    overflow-y: scroll;
+    padding-right:28px;
+    margin:10px 0;
+    transform: translate(14px);
+    -webkit-transform: translate(14px);
+    -o-transform: translate(14px);
+    -moz-transform: translate(14px);
+    -ms-transform: translate(14px);
+}
+.tblColArea>.ivu-table-cell>span{
+    padding-left: 22px;
+}
+.aLink{
+    color:#2d8cf0;
+}
+.aLink:hover{
+    text-decoration:underline;
+}
+.tblColArea>.ivu-table-cell{
+    padding:0;
+    margin:0
+}
+/*<i data-v-69e298c9="" class="ivu-icon ivu-icon-ios-paper" style="font-size: 20px;"></i>*/
+.icon-nav{
+    width:20px;
+    height:20px;
+}
+
+/* frequently */
+.ellipsis{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+.disIb{
+    display:inline-block
+}
+.disB{
+    display:block
+}
+.harf{
+    width:50%;
+}
+.haPer{
+    width:100%;
+}
+.wordBreak{
+    word-break: break-all;
+}
+.clearFix::after{
+    content:'';
+    display: block; 
+    clear:both;
+}
+.tras50{
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+.aLeft{
+    text-align:left;
+}
+.aRight{
+    text-align:right;
+}
+.aCenter{
+    text-align:center;
+}
+.required:before{
+    content:"*";
+    color:red;
+}
+
+
+
+@media screen and (max-width:1080px){
+    @import '/less/mobile.less';
+    ::-webkit-scrollbar{
+        display:none;
+    }
+    .PC{
+        display:none;
+    }
+    .Mobile{
+        display:block;
+        background:#fff;
+        min-height:100%
+    }
+    .MContainer{
+        padding:0.24rem;
+        padding-top:1.16rem;
+    }
+}
+@media screen and (min-width:1080px){
+    .PC{
+        display:block;
+    }
+    .Mobile{
+        display:none;
+    }
+}
+
+.fillShadow{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+}
+
+
+/* 引导 */
+.Guide{
+    background: rgba(0,0,0,0.5);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    .wraper{
+        border: 1px solid #fff;
+        position: absolute;
+        text-align: center;
+        border-radius: 50%;
+        overflow: hidden;
+        color: #fff;
+        padding: 20px;
+        width:234px;
+        height:100px;
+        .guidBtn span{
+            padding: 5px 25px;
+            cursor:pointer;
+
+        }
+    }
+    .circle{
+        position:absolute;
+        background:#fff;
+        overflow:hidden;
+        /*text-align:center;*/
+        font-size:12px;
+    }
+  }
+  
+  /* 富文本框 */
+.w-e-text-containser{
+    height:auto !important
+}

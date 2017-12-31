@@ -1,0 +1,91 @@
+/**
+* css3动画 animation
+*/
+.animation(@params){
+    animation:@params;
+    -webkit-animation:@params;
+    -o-animation:@params;
+    -moz-animation:@params;
+}
+.keyframes (@prefix,@name,@content) when (@prefix=def) {
+  @keyframes @name {
+    @content();
+  }
+}
+.keyframes (@prefix,@name,@content) when (@prefix=moz) {
+  @-moz-keyframes @name {
+    @content();
+  }
+}
+.keyframes (@prefix,@name,@content) when (@prefix=o) {
+  @-o-keyframes @name {
+    @content();
+  }
+}
+.keyframes (@prefix,@name,@content) when (@prefix=webkit) {
+  @-webkit-keyframes  @name{
+    @content();
+  }
+}
+.keyframes (@prefix,@name,@content) when (@prefix=all) {
+  .keyframes(moz,@name,@content);
+  .keyframes(o,@name,@content);
+  .keyframes(webkit,@name,@content);
+  .keyframes(def,@name,@content);
+}
+
+/**
+* css3转换 transform
+*/
+.transform(@params){
+    transform:@params;
+    -webkit-transform:@params;
+    -o-transform:@params;
+    -moz-transform:@params;
+    -ms-transform:@params;
+}
+/**
+* css3过度 transition
+*/
+.transition(@params){
+    transition:@params;
+    -webkit-transition:@params;
+    -o-transition:@params;
+    -moz-transition:@params;
+    -ms-transition:@params;
+}
+/**
+* 渐变
+*/
+.gradient-linear(@angle:180deg,@start:#000,@stop:#ff050e){
+    background-image: -webkit-linear-gradient(@angle,@start,@stop);
+    background-image: -moz-linear-gradient(@angle,@start,@stop);
+    background-image: -o-linear-gradient(@angle,@start,@stop);
+    background-image: linear-gradient(@angle,@start,@stop);
+    /* filter: progid:DXImageTransform.Microsoft.gradient(
+        GradientType=0,
+        startColorstr=#0066cc,
+        endColorstr=#8be1ff
+        ); */
+    /*IE<9>*/
+    // -ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#0066cc, endColorstr=#8be1ff)";
+    /*IE8+*/
+}
+.gradient-radial(@positionOrAngle:bottom left,@shapeOrSize:circle,@color_stop1:#000000,@color_stop2:#D2F726 ,@color_stop13:#DD2222 ){
+    background-image: -moz-radial-gradient(@positionOrAngle,@shapeOrSize, @color_stop1,@color_stop2,@color_stop13);
+    background-image: -webkit-radial-gradient(@positionOrAngle,@shapeOrSize, @color_stop1,@color_stop2,@color_stop13);
+    background-image: -o-radial-gradient(@positionOrAngle,@shapeOrSize, @color_stop1,@color_stop2,@color_stop13);
+    background-image: radial-gradient(@positionOrAngle,@shapeOrSize, @color_stop1,@color_stop2,@color_stop13);
+}
+
+
+
+.fixedShade(@rgba){
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: @rgba;
+    z-index:500;
+}
